@@ -3,7 +3,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "copier-template"
+name = "{{project_name}}"
 version = "0.1.0"
 description = ""
 authors = ["jtsw1990 <jtsw1990@gmail.com>"]
@@ -12,3 +12,5 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 pandas = "^1.5.3"
+pre-commit = "^3.3.2"
+ruff = "^0.1.13"
