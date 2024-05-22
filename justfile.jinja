@@ -1,0 +1,25 @@
+set shell:= ["powershell.exe", "-c"]
+
+help:
+	just --list --unsorted
+
+lint:
+	poetry run ruff check {{PROJECT_NAME}} -- fix
+	# poetry run ruff check tests --fix
+
+init-poetry:
+	@echo "Installing project..."
+	poetry config virtualenvs.in-project true
+	poetry install
+	poetry run python -m ipykernel install --user --name {{PROJECT_NAME}}
+
+init-pre-commit:
+	poetry run pre-commit install --hook-type pre-commit --hook-type commit-msg
+	poetry run pre-commit run --all-files
+
+clean:
+	Remove-Item -Path "_freeze" -Recurse -Confirm -Erroraction 'silentlycontinue'
+	Remove-Item -Path ".pytest_cache" -Recurse -Confirm -Erroraction 'silentlycontinue'
+	Remove-Item -Path ".ruff_cache" -Recurse -Confirm -Erroraction 'silentlycontinue'
+	Remove-Item -Path "__pycache__" -Recurse -Confirm -Erroraction 'silentlycontinue'
+	Get-ChildItem -Path . -Filter "__pycache__" -Recurse -Directory | Remove-Item - Recurse -Force
