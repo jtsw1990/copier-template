@@ -9,3 +9,8 @@ Testing repo for copier templating
 - `pipx install poetry` for dependency management
 
 - `winget install --id Casey.Just --exact`
+
+## Copying template 
+
+- Run `copier copy --vcs-ref develop https://github.com/jtsw1990/copier-template.git path_to_copy`
+- Answer prompts
