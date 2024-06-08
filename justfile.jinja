@@ -11,7 +11,7 @@ init-poetry:
 	@echo "Installing project..."
 	poetry config virtualenvs.in-project true
 	poetry install
-	poetry run python -m ipykernel install --user --name {{PROJECT_NAME}}
+	poetry run python -m ipykernel install --user --name {{project_name}}
 
 init-pre-commit:
 	poetry run pre-commit install --hook-type pre-commit --hook-type commit-msg
