@@ -14,3 +14,5 @@ Testing repo for copier templating
 
 - Run `copier copy --vcs-ref develop https://github.com/jtsw1990/copier-template.git path_to_copy`
 - Answer prompts
+- Navigate to repository folder
+- Run `just init-poetry` to install dependencies
