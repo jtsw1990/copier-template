@@ -3,6 +3,16 @@ project_name:
     type: str
     help: What is your project name?
 
+project_slug:
+    type: str
+    default: "{{ project_name | slugify }}"
+    help: project_slug (this is a cleaned up name of the project name eg no spaces)
+
 module_name:
     type: str
     help: What is your Python module name?
+
+remote_repository:
+    type: str
+    help: What is the remote repository url?
+    default: https://github.com/jtsw1990/{{project_slug}}.git

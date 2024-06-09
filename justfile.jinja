@@ -4,8 +4,13 @@ help:
 	just --list --unsorted
 
 lint:
-	poetry run ruff check {{PROJECT_NAME}} -- fix
+	poetry run ruff check {{project_name}} -- fix
 	# poetry run ruff check tests --fix
+
+init-git:
+	git init && git remote add origin {{remote_repository}}
+	git add .
+	git commit -m "feat: Initial template commit"
 
 init-poetry:
 	@echo "Installing project..."
