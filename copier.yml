@@ -5,7 +5,7 @@ project_name:
 
 project_slug:
     type: str
-    default: "{{ project_name | slugify }}"
+    default: "{{ project_name }}"
     help: project_slug (this is a cleaned up name of the project name eg no spaces)
 
 module_name:
